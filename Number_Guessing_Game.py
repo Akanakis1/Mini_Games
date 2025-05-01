@@ -1,10 +1,14 @@
 import random
 
+print("******************************")
+print("**Welcome to Guessing Number**")
+print("******************************")
+
 lowest = 0
 highest = 100
 answer = random.randint(lowest, highest)
 guesses = 0
-is_guessing = True
+max_attempts = 10
 
 print("Welcome to the Guessing Game!")
 print(f"Guess a number between {lowest} and {highest}.")
@@ -12,16 +16,18 @@ print("You have 10 attempts to guess the correct number.")
 print("If you want to quit, type 'exit' at any time.")
 print("Good luck!")
 
-while is_guessing and guesses < 10:
-    guess = input(f"Attempt {guesses + 1}: Enter your guess: ")
-    
-    if guess.lower() == 'exit':
-        print("Thanks for playing! Goodbye!")
+while guesses < max_attempts:
+    user_input = input(f"Attempt {guesses + 1}: Enter your guess: ")
+    if user_input.lower() == 'exit':
+        print("\nYou exited the game. Thanks for playing!")
         break
     try:
-        guess = int(guess)
+        guess = int(user_input)
     except ValueError:
-        print("Please enter a valid number.")
+        print("Invalid input. Please enter a number.\n")
+        continue
+    if guess < lowest or guess > highest:
+        print(f"Out of bounds! Guess a number between {lowest} and {highest}.\n")
         continue
     
     guesses += 1
@@ -33,18 +39,10 @@ while is_guessing and guesses < 10:
     elif guess > answer:
         print("Too high! Try again.")
     else:
-        print(f"Congratulations! You've guessed the correct number {answer} in {guesses} attempts.")
-        print("Thanks for playing!")
-        print("Goodbye!")
-        is_guessing = False
+        print(f"\n🎉 Congratulations! You guessed the number {answer} in {guesses} attempts.")
+        break
 
-
-if is_guessing:
-    if guesses == 10:
-        print("Game over!")
-        print("Better luck next time!")
-        print(f"The correct number was {answer}.")
-        print("Thanks for playing!")
-        print("Goodbye!")
-    else:
-        print("You quit the game.")
+else:
+    print("\n🚫 Game over!")
+    print(f"The correct number was {answer}.")
+print("Goodbye!")
