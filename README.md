@@ -1,38 +1,71 @@
-# Python Mini Projects (CLI)
+# Python CLI Utilities — Core Programming Exercises
 
-A small collection of beginner-friendly **command-line Python projects** built to practice core programming concepts: input validation, control flow, loops, and basic game logic. The repository currently includes a calculator and two interactive games.
+This repository contains a small set of Python command-line utilities designed to
+demonstrate **core programming fundamentals**, including input validation,
+control flow, looping logic, and basic state handling.
 
-## Projects
+The projects are intentionally simple and focus on correctness and clarity
+rather than advanced features.
 
-### 1) Calculator
-**File:** `Calculator.py`
-A simple calculator that supports:
-- Addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`)
-- Input validation for numeric values
-- Division-by-zero handling
-- Rounded output (4 decimals)
+---
 
-### 2) Number Guessing Game
-**File:** `Number_Guessing_Game.py`
-A guessing game where:
-- The program selects a random number between 0 and 100
-- The player has **10 attempts**
-- The player can quit anytime by typing `exit`.
-- Feedback is provided after each guess (too high/too low)
+## Project Purpose
 
-### 3) Rock, Paper, Scissors
-**File:** `Rock_Paper_Scissors.py`
-A classic rock-paper-scissors game versus the computer:
-- Validates user input (rock/paper/scissors)
-- Tracks score until you reach **+5** (win) or **-3** (lose)
+This repository exists to demonstrate:
+- reliable Python control flow,
+- defensive input handling,
+- structured CLI interaction,
+- basic program state management.
 
-## Getting Started
+It complements analytics-focused projects by showing solid programming foundations.
+
+---
+
+## Included Scripts
+
+### Calculator — `Calculator.py`
+A command-line calculator supporting:
+- addition, subtraction, multiplication, and division,
+- numeric input validation,
+- division-by-zero handling,
+- formatted numeric output.
+
+---
+
+### Number Guessing Utility — `Number_Guessing_Game.py`
+An interactive guessing utility that:
+- selects a random integer within a fixed range,
+- limits the number of attempts,
+- provides directional feedback,
+- allows graceful early exit.
+
+---
+
+### Rock–Paper–Scissors Utility — `Rock_Paper_Scissors.py`
+A simple interactive script demonstrating:
+- input validation against a fixed set of options,
+- score tracking across rounds,
+- loop control and termination conditions.
+
+---
+
+## Repository Structure
+├── Calculator.py  
+├── Number_Guessing_Game.py  
+├── Rock_Paper_Scissors.py  
+└── README.md  
+
+---
+
+## How to Run
 
 ### Requirements
-- Python 3.8+ (works with standard library only)
+- Python 3.8+
+- Standard library only
 
-### Run a project
-From the repository folder:
+### Running a Script
+
+From the repository directory:
 
 ```bash
 python Calculator.py
